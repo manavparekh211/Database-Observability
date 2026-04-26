@@ -1,0 +1,12 @@
+redisAddress: redis://redis.redis.svc.cluster.local:6379
+
+serviceMonitor:
+  enabled: true
+  labels:
+    release: prometheus
+
+auth:
+  enabled: true
+  secret:
+    name: "redis-secret"
+    key: "REDIS_PASSWORD"

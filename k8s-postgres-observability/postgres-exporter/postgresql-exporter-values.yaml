@@ -1,0 +1,15 @@
+config:
+  datasource:
+    host: 'postgresql.database-monitoring.svc.cluster.local'
+    user: postgres
+    userSecret:
+     name: 'postgresql-secret'
+     key: 'POSTGRES_USER'
+    passwordSecret:
+     name: 'postgresql-secret'
+     key: 'POSTGRES_PASSWORD'
+
+serviceMonitor:
+  enabled: true
+  labels:
+    release: prometheus
