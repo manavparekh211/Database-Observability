@@ -17,32 +17,6 @@ All components are orchestrated via **Docker Compose** (local dev) and **Kuberne
 
 ---
 
-## Quick Start
-
-**Prerequisites:** Docker, Docker Compose, kubectl (for K8s)
-
-```bash
-# Clone the repo
-git clone https://github.com/manavparekh211/Database-Observability.git
-cd Database-Observability
-
-# Start a stack (e.g., PostgreSQL)
-cd docker-compose/postgresql
-docker compose up -d
-
-# Access Grafana
-open http://localhost:3000   # admin / admin
-```
-
-For Kubernetes:
-
-```bash
-kubectl apply -f kubernetes/postgresql/
-kubectl port-forward svc/grafana 3000:3000
-```
-
----
-
 ## Stack
 
 | Component | Role |
