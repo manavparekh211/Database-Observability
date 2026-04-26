@@ -5,32 +5,15 @@
 ---
 
 ## Architecture
+
+```
 Databases (PG / MySQL / Mongo / Redis)
-└── Exporters (db-specific)
-└── Prometheus (scrape & store)
-└── Grafana (visualize & alert)
+    └── Exporters (db-specific)
+        └── Prometheus (scrape & store)
+            └── Grafana (visualize & alert)
+```
 
 All components are orchestrated via **Docker Compose** (local dev) and **Kubernetes** (production-grade deployment).
-
----
-
-## Project Structure
-database-observability-toolkit/
-├── docker-compose/
-│   ├── postgresql/
-│   ├── mysql/
-│   ├── mongodb/
-│   └── redis/
-├── kubernetes/
-│   ├── postgresql/
-│   ├── mysql/
-│   ├── mongodb/
-│   └── redis/
-├── prometheus/
-│   └── prometheus.yml
-├── grafana/
-│   └── dashboards/
-└── README.md
 
 ---
 
