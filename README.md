@@ -1,39 +1,50 @@
-# Database Observability Toolkit
+# Database Observability Suite
 
-> End-to-end observability for PostgreSQL, MySQL, MongoDB, and Redis — containerized with Docker Compose and Kubernetes, monitored via Prometheus and Grafana.
-
----
-
-## Architecture
-
-```
-Databases (PG / MySQL / Mongo / Redis)
-    └── Exporters (db-specific)
-        └── Prometheus (scrape & store)
-            └── Grafana (visualize & alert)
-```
-
-All components are orchestrated via **Docker Compose** (local dev) and **Kubernetes** (production-grade deployment).
+Welcome to the **Database Observability Suite**! This repository contains a collection of resources and configurations to enable observability for various database systems. Each folder is tailored to a specific database or observability setup, providing dashboards, exporters, and Kubernetes manifests to monitor and analyze database performance effectively.
 
 ---
 
-## Stack
+## Folder Overview
 
-| Component | Role |
-|-----------|------|
-| PostgreSQL / MySQL / MongoDB / Redis | Target databases |
-| postgres_exporter / mysqld_exporter / mongodb_exporter / redis_exporter | Metrics exposition |
-| Prometheus | Metrics collection & storage |
-| Grafana | Dashboards & alerting |
-| Docker Compose | Local orchestration |
-| Kubernetes | Production orchestration |
+### `docker-compose-observability/`
+A Docker Compose setup for local observability. Includes configurations for:
+- **Prometheus**: Metrics collection and alerting.
+- **Grafana**: Visualization dashboards.
+- **Traffic Simulation**: A script to generate sample traffic.
+
+### `k8s-mongodb-observability/`
+Kubernetes manifests for MongoDB observability. Includes:
+- **MongoDB Exporter**: Collects metrics from MongoDB.
+- **Grafana Dashboard**: Pre-configured MongoDB performance visualization.
+- **Kubernetes Resources**: Secrets, services, and StatefulSets.
+
+### `k8s-mysql-observability/`
+Kubernetes manifests for MySQL observability. Includes:
+- **MySQL Exporter**: Collects metrics from MySQL.
+- **Grafana Dashboard**: Pre-configured MySQL performance visualization.
+- **Kubernetes Resources**: Secrets, services, and StatefulSets.
+
+### `k8s-postgres-observability/`
+Kubernetes manifests for PostgreSQL observability. Includes:
+- **PostgreSQL Exporter**: Collects metrics from PostgreSQL.
+- **Grafana Dashboard**: Pre-configured PostgreSQL performance visualization.
+- **Kubernetes Resources**: Secrets, services, and StatefulSets.
+
+### `k8s-redis-observability/`
+Kubernetes manifests for Redis observability. Includes:
+- **Redis Exporter**: Collects metrics from Redis.
+- **Grafana Dashboard**: Pre-configured Redis performance visualization.
+- **Kubernetes Resources**: Secrets, services, and StatefulSets.
 
 ---
 
-## Key Learnings
+## Quick Start
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/database-observability-suite.git
+   ```
+2. Navigate to the desired folder and follow the README instructions within.
+3. Deploy the observability stack locally or on Kubernetes.
+---
 
-- Unified observability patterns across heterogeneous database engines
-- Exporter configuration per database type (auth, TLS, scrape intervals)
-- Prometheus scrape job design and label management at scale
-- Grafana dashboard templating for multi-instance visibility
-- Kubernetes resource design: Deployments, Services, ConfigMaps, Secrets
+Happy monitoring! 🚀
