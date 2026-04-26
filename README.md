@@ -4,6 +4,36 @@ Welcome to the **Database Observability Suite**! This repository contains a coll
 
 ---
 
+## Architecture Diagram
+
+Below is a high-level architecture diagram of the repository structure:
+
+```mermaid
+graph TD
+    A[Database Observability Suite] --> B[Docker Compose Observability]
+    A --> C[K8s MongoDB Observability]
+    A --> D[K8s MySQL Observability]
+    A --> E[K8s PostgreSQL Observability]
+    A --> F[K8s Redis Observability]
+    B --> B1[Prometheus]
+    B --> B2[Grafana]
+    B --> B3[Traffic Simulation]
+    C --> C1[MongoDB Exporter]
+    C --> C2[Grafana Dashboard]
+    C --> C3[K8s Resources]
+    D --> D1[MySQL Exporter]
+    D --> D2[Grafana Dashboard]
+    D --> D3[K8s Resources]
+    E --> E1[PostgreSQL Exporter]
+    E --> E2[Grafana Dashboard]
+    E --> E3[K8s Resources]
+    F --> F1[Redis Exporter]
+    F --> F2[Grafana Dashboard]
+    F --> F3[K8s Resources]
+```
+
+---
+
 ## Folder Overview
 
 ### `docker-compose-observability/`
